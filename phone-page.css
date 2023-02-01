@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.container {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 750px;
+}
+
+.input {
+    background-color: #fff;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input {
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    border-radius: 4px;
+    color: black;
+    border: 1px solid #dadce0;
+    padding: 13px 15px;
+    transition: .25s;
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid #1a73e8;
+}
+
+.input-label {
+    position: absolute;
+    color: #80868b;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: calc(100% - (2*8px));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    left: 8px;
+    top: 15px;
+    padding: 0 8px;
+    transition: .25s;
+}
+
+.input-label {
+    /* color: #1a73e8; */
+    top: -6px;
+    background-color: #fff;
+    font-size: 11px;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+p {
+    color: #777;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.check-btn {
+    text-align: justify;
+    color: #333;
+    cursor: pointer;
+}
+
+.check-btn label {
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+    margin-left: 50px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin-top: 0;
+    width: 250px;
+    color: dodgerblue;
+}
+
+a:hover {
+    background-color: rgba(143, 203, 255, 0.12);
+}
