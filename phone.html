@@ -14,12 +14,10 @@
         <h1>Telegram</h1>
         <p>Please confirm your country code and enter your phone number.</p>
         <form class="form-container">
-            <div class="input-box">
-                <input type="text" class="input" id="country">
-                <label class="input-label" for="country">
-                    Country
-                </label>
-            </div>
+            <label>
+                Countries
+                <input mbsc-input id="demo-country-picker" data-dropdown="true" data-input-style="box" data-label-style="stacked" placeholder="Please select..." />
+            </label>
             <div class="input-box">
                 <input type="text" class="input" id="number" value="+998 ">
                 <label class="input-label" for="number">
@@ -36,5 +34,32 @@
         <a href="index.html">LOG IN BY QR CODE</a><br><br>
         <a href="phone-uzbekcha.html">O‘ZBEK TILIDA DAVOM ETISH</a>
     </div>
+
+    <script>
+        mobiscroll.setOptions({
+            theme: 'ios',
+            themeVariant: 'light'
+        });
+
+        var inst = mobiscroll.select('#demo-country-picker', {
+            display: 'anchored',
+            filter: true,
+            itemHeight: 40,
+            renderItem: function (item) {
+                return '<div class="md-country-picker-item">' +
+                    '<img class="md-country-picker-flag" src="https://img.mobiscroll.com/demos/flags/' + item.data.value + '.png" />' +
+                    item.display + '</div>';
+            }
+        });
+
+        mobiscroll.util.http.getJson('https://trial.mobiscroll.com/content/countries.json', function (resp) {
+            var countries = [];
+            for (var i = 0; i < resp.length; ++i) {
+                var country = resp[i];
+                countries.push({ text: country.text, value: country.value });
+            }
+            inst.setOptions({ data: countries });
+        });
+    </script>
 </body>
 </html>
